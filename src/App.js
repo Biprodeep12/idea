@@ -1,24 +1,23 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
+import Nav from './components/Nav';
+import NewsD from './components/NewsD';
 
 function App() {
+  const [articles, setArticles] = useState([]);
+  const [loading, setLoading] = useState(false); // New loading state
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Nav setArticles={setArticles} setLoading={setLoading} />
+      <div className='main-container'>
+        <NewsD articles={articles} loading={loading} />
+        <div className='foot'>
+          <h1>News-Chor</h1>
+          <h3>Made by the Black Community</h3>
+        </div>
+      </div>
+    </>
   );
 }
 

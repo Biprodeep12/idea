@@ -1,38 +1,173 @@
-.App {
-  text-align: center;
+::-webkit-scrollbar {
+  width: 10px;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+::-webkit-scrollbar-track {
+  background-color: rgb(193, 192, 192);
+  border-radius: 20px;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+::-webkit-scrollbar-thumb {
+  background-color: rgb(137, 137, 137);
+  border-radius: 20px;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.main-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+.navabar {
+  width: 100%;
+  height: 70px;
+  position: fixed;
+  display: grid;
+  grid-template-columns: 30% 40% 30%;
+  background-color: #555;
+  z-index: 5;
+}
+.nav-logo {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  font-family: sans-serif;
+  font-size: 35px;
+  font-weight: 600;
   color: white;
+  padding-left: 10px;
+}
+.navabar input {
+  align-self: center;
+  justify-self: center;
+  border-radius: 10px;
+  width: 70%;
+  border: none;
+  height: 70%;
+  padding-left: 10px;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  font-size: 25px;
+  font-family: sans-serif;
+  font-weight: 600;
+}
+.NewsD-cont {
+  width: 100%;
+  padding: 100px 0 0 0;
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  background-color: #ddd;
+}
+#NewsD-cont-display {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 16px;
+  min-height: 335px;
 }
 
-.App-link {
-  color: #61dafb;
+.article {
+  align-self: center;
+  justify-self: center;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 0 2px;
+  padding: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 250px;
+  width: 300px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  background-color: white;
 }
 
-@keyframes App-logo-spin {
+.article:hover {
+  transform: scale(1.05);
+}
+
+.article-image {
+  height: 170px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+#NewsD-cont-display .article .placeholder-image {
+  height: 100px;
+  width: 100%;
+  background-color: #eee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  color: #999;
+  border-radius: 4px;
+}
+
+#NewsD-cont-display .article h2 {
+  font-size: 14px;
+  margin: 8px 0;
+  line-height: 1.2;
+  text-align: center;
+}
+
+#NewsD-cont-display .article p {
+  font-size: 12px;
+  margin: 0;
+  color: #555;
+}
+
+#NewsD-cont-display .article a {
+  font-size: 12px;
+  color: blue;
+  text-decoration: underline;
+  margin-top: auto;
+}
+.loading-spinner {
+  width: 24px;
+  height: 24px;
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-top: 4px solid #007bff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  position: absolute;
+  top: 200px;
+  left: 50%;
+  translate: -50%;
+}
+
+@keyframes spin {
   from {
     transform: rotate(0deg);
   }
   to {
     transform: rotate(360deg);
   }
+}
+.foot {
+  width: 100%;
+  height: 300px;
+  background-color: #555;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+  padding-top: 30px;
+}
+.foot h1,
+.foot h3 {
+  margin: 0;
+  color: white;
+}
+.No-Art {
+  position: absolute;
+  top: 200px;
+  left: 50%;
+  translate: -50%;
+  font-family: sans-serif;
+  font-weight: 600;
+  font-size: 35px;
 }
